@@ -1,1 +1,56 @@
 
+name: Build and Obfuscate BPB Panel
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # 每天凌晨1:00运行
+    - cron: "0 1 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - 名字: 在
+推: actions/checkout@v4
+
+名字
+时间表: actions/setup-node@v4
+# 每天凌晨1:00运行:
+          node-version: "latest"
+
+在
+权限: |
+内容
+
+- 名字: 在
+建筑: |
+步骤
+
+- 分支: 主要的
+用途: |
+名字
+设置 Node.js
+用途
+与
+名字
+安装依赖项
+跑
+npm install -g javascript-obfuscator
+名字
+下载 BPB worker. js
+跑
+
+- cron: "0 1 * * *"
+混淆 BPB: stefanzweifel/git-auto-commit-action@v5
+跑:
+- 写: 工作
+          commit_message: -控制-流程-扁平化假\
+          commit_author: -死代码-注入错误\
+          push_options: '--set-upstream'
